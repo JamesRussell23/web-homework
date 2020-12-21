@@ -1,5 +1,6 @@
 import React from 'react'
 import Transaction from './transaction'
+import { css } from '@emotion/react'
 
 class TransactionsList extends React.Component {
   constructor (props) {
@@ -71,12 +72,34 @@ class TransactionsList extends React.Component {
       <div>
         <form onSubmit={this.addTransaction}>
           <input
+            css={css`
+            border: 0;
+            width: 200px;
+            height: 50px;
+            padding: 0 20px;
+            margin: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            font-family: Arial;
+            text-align: center;
+            `}
             onChange={this.handleInput}
             placeholder='Enter Transaction'
             type='text'
             value={this.state.currentItem.text}
           />
-          <button type='submit'>Add Transaction</button>
+          <button
+            css={css`
+            height: 40px;
+            width: 85px;
+            border-radius: 5px;
+            text-align: center;
+            font-family: Impact;
+            &:hover {
+              background-color: greenyellow
+            }
+            `}
+            type='submit'>Add Transaction</button>
         </form>
         <Transaction deleteTransaction={this.deleteTransaction} items={this.state.items} setUpdate={this.setUpdate} />
       </div>

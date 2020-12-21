@@ -1,12 +1,16 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Home } from './home'
 
 function AppRouter () {
   return (
     <Router>
-      <div css={layoutStyle}>
+      <div
+        css={css`
+       background-color: lightsalmon;
+    `}
+      >
         <nav css={navStyle}>
           <ul >
             <li>
@@ -28,11 +32,11 @@ function AppRouter () {
 
 export default AppRouter
 
-const layoutStyle = css`
-    display: grid;
-    grid-row-gap: 24px;
-    padding: 8px;
-`
+// const layoutStyle = css`
+//     display: grid;
+//     grid-row-gap: 24px;
+//     padding: 8px;
+// `
 
 const navStyle = css`
   grid-row: 1;
